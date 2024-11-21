@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
         </p>
         <div className="flex justify-center space-x-4">
           <a
-            href="https://github.com/danieldansa"
+            href="https://github.com/DDansAbelenda"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
             <Github className="w-5 h-5" />
           </a>
           <a
-            href="https://linkedin.com/in/danieldansa"
+            href="https://www.linkedin.com/in/daniel-dans-abelenda-aa0a1627b/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
