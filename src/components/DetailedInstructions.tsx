@@ -16,6 +16,22 @@ const DetailedInstructions: React.FC = () => {
             {t('objectiveDescription')}
           </p>
         </div>
+        
+        <div className="space-y-2">
+          <h3 className="font-medium text-gray-700 dark:text-gray-300">
+            {t('instructionsTitle')}
+          </h3>
+          <p className="text-gray-600 dark:text-gray-400">
+            {t('instructionsText')
+              .split('\n')
+              .map((line, index) => (
+                <React.Fragment key={index}>
+                  {line}
+                  <br />
+                </React.Fragment>
+              ))}
+          </p>
+        </div>
 
         <div className="space-y-2">
           <h3 className="font-medium text-gray-700 dark:text-gray-300">
