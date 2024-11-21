@@ -90,7 +90,3 @@ El proyecto utiliza las siguientes dependencias de desarrollo:
 - `typescript`
 - `typescript-eslint`
 - `vite`
-
-## Licencia
-
-Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
