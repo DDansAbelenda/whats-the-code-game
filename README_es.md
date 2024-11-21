@@ -93,27 +93,4 @@ El proyecto utiliza las siguientes dependencias de desarrollo:
 
 ## Licencia
 
-Este proyecto está licenciado bajo la Licencia MIT.
-```
-
-Finalmente, puedes modificar el `README.md` principal para incluir enlaces a las versiones en otros idiomas, como este:
-
-```markdown
-# What's the Code Game
-
-## Overview
-
-[Versión en Español](README_es.md)
-
-### Enhanced Description for the README
-
-**What's the Code Game** is an exciting game that combines logic and math with the thrill of solving puzzles. 
-
-...
-
-## License
-
-This project is licensed under the MIT License.
-```
-
-Puedes seguir los pasos mencionados para crear y subir ambos archivos a tu repositorio.
+Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.

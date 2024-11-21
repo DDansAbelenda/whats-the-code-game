@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, MailPlus } from 'lucide-react';
+import { Linkedin, MailPlus } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
