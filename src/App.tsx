@@ -11,7 +11,7 @@ import GameStats from './components/Stats/GameStats';
 import { generateRandomNumber, checkGuess } from './utils/gameLogic';
 import { Difficulty } from './types/game';
 import { DIFFICULTY_CONFIG } from './utils/gameConfig';
-import { getGameStats, saveGameResult } from './utils/storage';
+import { getGameStats, saveGameResult, resetGameStats } from './utils/storage';
 import './i18n/config';
 import { LockCodeIcon } from './components/icons/LockCodeIcon';
 
@@ -99,6 +99,12 @@ function App() {
     }
   };
 
+  
+  const handleRestart = () => {
+    const newStats = resetGameStats();
+    setStats(newStats);
+  };
+
   return (
     <div className="min-h-screen bg-math-pattern bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
       <Header
@@ -106,6 +112,7 @@ function App() {
         onToggleTheme={() => setIsDark(!isDark)}
         stats={stats}
         onHomeClick={returnToHome}
+        onRestart={handleRestart}
       />
 
       <div className="pt-32 p-4 sm:p-8">

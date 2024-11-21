@@ -21,6 +21,7 @@ export const es = {
   gamesLost: "Partidas Perdidas",
   totalPoints: "Puntos Totales",
   viewStats: "Ver Estadísticas",
+  restartGame: "Reiniciar estadísticas",
   returnToHome: 'Volver al Inicio',
   viewInstructions: "Ver Instrucciones",
   recentGames: "Juegos Recientes",

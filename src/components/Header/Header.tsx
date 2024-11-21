@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Brain, BarChart, HelpCircle } from 'lucide-react';
+import { Brain, BarChart, HelpCircle, RefreshCw } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import LanguageSelector from './LanguageSelector';
 import StatsDrawer from '../Stats/StatsDrawer';
@@ -13,9 +13,10 @@ interface HeaderProps {
   onToggleTheme: () => void;
   stats: GameStats;
   onHomeClick: () => void;
+  onRestart: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ isDark, onToggleTheme, stats, onHomeClick }) => {
+const Header: React.FC<HeaderProps> = ({ isDark, onToggleTheme, stats, onHomeClick, onRestart }) => {
   const { t } = useTranslation();
   const [isStatsOpen, setIsStatsOpen] = useState(false);
   const [isInstructionsOpen, setIsInstructionsOpen] = useState(false);
@@ -64,6 +65,14 @@ const Header: React.FC<HeaderProps> = ({ isDark, onToggleTheme, stats, onHomeCli
                   className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
                 >
                   <BarChart className="w-6 h-6 text-gray-600 dark:text-gray-300" />
+                </button>
+              </Tooltip>
+              <Tooltip content={t('restartGame')}>
+                <button
+                  onClick={onRestart}
+                  className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                >
+                  <RefreshCw className="w-6 h-6 text-gray-600 dark:text-gray-300" />
                 </button>
               </Tooltip>
               <LanguageSelector />

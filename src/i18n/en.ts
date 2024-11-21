@@ -21,6 +21,7 @@ export const en = {
   gamesLost: "Games Lost",
   totalPoints: "Total Points",
   viewStats: "View Statistics",
+  restartGame:"Restart Stats",
   returnToHome: 'Return to Home',
   viewInstructions: "View Instructions",
   recentGames: "Recent Games",

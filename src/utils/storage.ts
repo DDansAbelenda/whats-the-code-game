@@ -44,3 +44,15 @@ export const saveGameResult = (
   return stats;
 };
 
+export const resetGameStats = (): GameStats => {
+  const initialStats: GameStats = {
+    gamesPlayed: 0,
+    gamesWon: 0,
+    gamesLost: 0,
+    totalPoints: 0,
+    history: []
+  };
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(initialStats));
+  return initialStats;
+};
+
