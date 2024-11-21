@@ -3,10 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { Brain, BarChart, HelpCircle } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import LanguageSelector from './LanguageSelector';
-import StatsDrawer from './StatsDrawer';
-import InstructionsDrawer from './InstructionsDrawer';
-import { GameStats } from '../types/game';
-import Tooltip from './Tooltip';
+import StatsDrawer from '../Stats/StatsDrawer';
+import InstructionsDrawer from '../Instructions/InstructionsDrawer';
+import { GameStats } from '../../types/game';
+import Tooltip from '../Tooltip';
 
 interface HeaderProps {
   isDark: boolean;

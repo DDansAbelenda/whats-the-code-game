@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { GameStats as GameStatsType } from '../types/game';
+import { GameStats as GameStatsType } from '../../types/game';
 import { Trophy, Target, XCircle, Coins } from 'lucide-react';
 
 interface GameStatsProps {

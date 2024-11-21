@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Trophy, Target, XCircle, Coins, Clock } from 'lucide-react';
-import { GameStats } from '../types/game';
+import { GameStats } from '../../types/game';
 
 interface GameStatsDetailProps {
   stats: GameStats;

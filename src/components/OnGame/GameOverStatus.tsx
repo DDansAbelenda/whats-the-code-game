@@ -2,14 +2,14 @@ import React from 'react';
 import { Trophy, XCircle, Home } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
-interface GameStatusProps {
+interface GameOverStatusProps {
   won: boolean;
   targetNumber: string;
   onNewGame: () => void;
   onReturnHome: () => void;
 }
 
-const GameStatus: React.FC<GameStatusProps> = ({ won, targetNumber, onNewGame, onReturnHome }) => {
+const GameOverStatus: React.FC<GameOverStatusProps> = ({ won, targetNumber, onNewGame, onReturnHome }) => {
   const { t } = useTranslation();
 
   return (
@@ -54,4 +54,4 @@ const GameStatus: React.FC<GameStatusProps> = ({ won, targetNumber, onNewGame, o
   );
 };
 
-export default GameStatus;
+export default GameOverStatus;

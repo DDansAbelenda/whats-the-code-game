@@ -46,10 +46,7 @@ export const es = {
   scoringEasy: "Fácil: +10 puntos por ganar, -5 puntos por perder",
   scoringMedium: "Medio: +15 puntos por ganar, -10 puntos por perder",
   scoringHard: "Difícil: +20 puntos por ganar, -15 puntos por perder",
-  restartWarning: "¿Reiniciar Juego?",
-  restartPenaltyWarning: "Si reinicias ahora, perderás 5 puntos. ¿Estás seguro de que quieres continuar?",
   cancel: "Cancelar",
-  confirmRestart: "Sí, Reiniciar",
   returnHome: "Volver al Inicio",
   viewOnGitHub: "Ver en GitHub"
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { X } from 'lucide-react';
-import { GameStats } from '../types/game';
+import { GameStats } from '../../types/game';
 import GameStatsDetail from './GameStatsDetail';
 
 interface StatsDrawerProps {

@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import confetti from 'canvas-confetti';
 import { useTranslation } from 'react-i18next';
-import DigitInput from './components/DigitInput';
-import GuessList from './components/GuessList';
-import GameStatus from './components/GameStatus';
-import Header from './components/Header';
+import GuessForm from './components/OnGame/GuessForm';
+import GuessList from './components/OnGame/GuessList';
+import GameOverStatus from './components/OnGame/GameOverStatus';
+import Header from './components/Header/Header';
 import Footer from './components/Footer';
 import DifficultySelector from './components/DifficultySelector';
-import GameStats from './components/GameStats';
+import GameStats from './components/Stats/GameStats';
 import { generateRandomNumber, checkGuess } from './utils/gameLogic';
 import { Difficulty } from './types/game';
 import { DIFFICULTY_CONFIG } from './utils/gameConfig';
@@ -114,7 +114,7 @@ function App() {
             {!gameStarted ? (
               <div className="space-y-8">
                 <div className="flex justify-center items-center space-x-2 text-5xl">
-                  <LockCodeIcon className={'size-40 '}/>
+                  <LockCodeIcon className={'size-40 '} />
                 </div>
                 {isMobile && (
                   <h1 className="text-xl font-bold text-gray-800 dark:text-white whitespace-nowrap text-center">
@@ -146,14 +146,14 @@ function App() {
                 )}
 
                 {gameOver ? (
-                  <GameStatus
+                  <GameOverStatus
                     won={won}
                     targetNumber={targetNumber}
                     onNewGame={startNewGame}
                     onReturnHome={returnToHome}
                   />
                 ) : (
-                  <DigitInput
+                  <GuessForm
                     value={currentGuess}
                     onChange={setCurrentGuess}
                     onSubmit={handleGuess}

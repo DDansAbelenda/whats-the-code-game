@@ -2,14 +2,14 @@ import React, { useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArrowRight } from 'lucide-react';
 
-interface DigitInputProps {
+interface GuessFormProps {
   value: string;
   onChange: (value: string) => void;
   onSubmit: () => void;
   error?: string;
 }
 
-const DigitInput: React.FC<DigitInputProps> = ({ value, onChange, onSubmit, error }) => {
+const GuessForm: React.FC<GuessFormProps> = ({ value, onChange, onSubmit, error }) => {
   const { t } = useTranslation();
   const inputRefs = [useRef<HTMLInputElement>(null), useRef<HTMLInputElement>(null), useRef<HTMLInputElement>(null)];
 
@@ -82,4 +82,4 @@ const DigitInput: React.FC<DigitInputProps> = ({ value, onChange, onSubmit, erro
   );
 };
 
-export default DigitInput;
+export default GuessForm;

@@ -1,7 +1,6 @@
 import { GameStats, GameHistory, Difficulty } from '../types/game';
 
 const STORAGE_KEY = 'whatsTheCode_gameStats';
-const RESTART_PENALTY = -5;
 
 export const getGameStats = (): GameStats => {
   const stored = localStorage.getItem(STORAGE_KEY);
@@ -45,19 +44,3 @@ export const saveGameResult = (
   return stats;
 };
 
-export const applyRestartPenalty = () => {
-  const stats = getGameStats();
-  stats.totalPoints += RESTART_PENALTY;
-  
-  const gameResult: GameHistory = {
-    difficulty: 'medium',
-    attempts: 0,
-    won: false,
-    points: RESTART_PENALTY,
-    date: new Date().toISOString()
-  };
-  
-  stats.history.push(gameResult);
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(stats));
-  return stats;
-};
