@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin } from 'lucide-react';
+import { Github, Linkedin, MailPlus } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
@@ -31,6 +31,14 @@ const Footer: React.FC = () => {
             className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
           >
             <Linkedin className="w-5 h-5" />
+          </a>
+          <a
+            href="mailto:ddansabelenda@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
+          >
+            <MailPlus className="w-5 h-5" />
           </a>
         </div>
       </div>
