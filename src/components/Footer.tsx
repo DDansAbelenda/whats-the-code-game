@@ -4,16 +4,11 @@ import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="mt-8 py-4 border-t border-gray-200 dark:border-gray-700">
       <div className="text-center space-y-2">
         <p className="text-sm text-gray-600 dark:text-gray-400">
           {t('developedBy')} Daniel Dans Abelenda
-        </p>
-        <p className="text-sm text-gray-600 dark:text-gray-400">
-          © {currentYear} {t('allRightsReserved')}
         </p>
         <div className="flex justify-center space-x-4">
           <a
