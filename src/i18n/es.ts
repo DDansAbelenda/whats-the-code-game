@@ -50,5 +50,6 @@ export const es = {
   restartPenaltyWarning: "Si reinicias ahora, perderás 5 puntos. ¿Estás seguro de que quieres continuar?",
   cancel: "Cancelar",
   confirmRestart: "Sí, Reiniciar",
-  returnHome: "Volver al Inicio"
+  returnHome: "Volver al Inicio",
+  viewOnGitHub: "Ver en GitHub"
 };

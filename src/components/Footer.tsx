@@ -10,15 +10,7 @@ const Footer: React.FC = () => {
         <p className="text-sm text-gray-600 dark:text-gray-400">
           {t('developedBy')} Daniel Dans Abelenda
         </p>
-        <div className="flex justify-center space-x-4">
-          <a
-            href="https://github.com/DDansAbelenda"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
-          >
-            <Github className="w-5 h-5" />
-          </a>
+        <div className="flex justify-center space-x-4 items-center">
           <a
             href="https://www.linkedin.com/in/daniel-dans-abelenda-aa0a1627b/"
             target="_blank"
@@ -35,6 +27,16 @@ const Footer: React.FC = () => {
           >
             <MailPlus className="w-5 h-5" />
           </a>
+          <div className="flex justify-center space-x-4">
+          <a
+            href="https://github.com/DDansAbelenda/whats-the-code-game"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-2 py-1 bg-blue-500 text-white rounded-full hover:bg-blue-700"
+          >
+            {t('viewOnGitHub')}
+          </a>
+        </div>
         </div>
       </div>
     </footer>
