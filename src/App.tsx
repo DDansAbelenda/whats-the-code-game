@@ -87,11 +87,11 @@ function App() {
       setGameOver(true);
       const newStats = saveGameResult(difficulty, newGuesses.length, true, config.winPoints);
       setStats(newStats);
-      confetti({
+      /*confetti({
         particleCount: 100,
         spread: 70,
         origin: { y: 0.6 }
-      });
+      });*/
     } else if (newGuesses.length >= config.attempts) {
       setGameOver(true);
       const newStats = saveGameResult(difficulty, newGuesses.length, false, config.losePoints);
