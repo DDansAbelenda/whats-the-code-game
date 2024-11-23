@@ -42,7 +42,7 @@ export const saveGameResult = (
     stats.gamesLost++;
   }
   stats.totalPoints += points;
-  stats.history.push(gameResult);
+  stats.history.unshift(gameResult);
 
   localStorage.setItem(STORAGE_KEY, JSON.stringify(stats));
   return stats;

@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Trophy, Target, XCircle, Coins, Clock, Lock, Unlock, Trash } from 'lucide-react';
 import { GameStats } from '../../types/game';
-import { deleteGameResult, getGameStats } from '../../utils/storage';
+import { deleteGameResult } from '../../utils/storage';
 
 interface GameStatsDetailProps {
   stats: GameStats;
@@ -52,7 +52,7 @@ const GameStatsDetail: React.FC<GameStatsDetailProps> = ({ stats, setStats }) =>
           {t('recentGames')}
         </h3>
         <div className="space-y-3">
-          {stats.history.reverse().map((game, index) => (
+          {stats.history.map((game, index) => (
             <div
               key={stats.history[index].id}
               className="bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg flex items-center justify-between"
