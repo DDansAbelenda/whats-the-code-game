@@ -7,6 +7,8 @@ import StatsDrawer from '../Stats/StatsDrawer';
 import InstructionsDrawer from '../Instructions/InstructionsDrawer';
 import { GameStats } from '../../types/game';
 import Tooltip from '../Tooltip';
+import { toast } from 'sonner';
+import ConfirmDialog from '../ConfirmDialog';
 
 interface HeaderProps {
   isDark: boolean;
@@ -29,6 +31,14 @@ const Header: React.FC<HeaderProps> = ({ isDark, onToggleTheme, stats, setStats,
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  const [isConfirmDialogOpen, setIsConfirmDialogOpen] = useState(false);
+
+  const handleConfirmRestart = () => {
+    onRestart();
+    setIsConfirmDialogOpen(false);
+    toast.success(t('successRestartStatsMessage'));
+  };
 
   return (
     <>
@@ -68,16 +78,16 @@ const Header: React.FC<HeaderProps> = ({ isDark, onToggleTheme, stats, setStats,
                   <BarChart className="w-6 h-6 text-gray-600 dark:text-gray-300" />
                 </button>
               </Tooltip>
+              <LanguageSelector />
+              <ThemeToggle isDark={isDark} onToggle={onToggleTheme} />
               <Tooltip content={t('restartGame')}>
                 <button
-                  onClick={onRestart}
+                  onClick={() => setIsConfirmDialogOpen(true)}
                   className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
                 >
                   <RefreshCw className="w-6 h-6 text-gray-600 dark:text-gray-300" />
                 </button>
               </Tooltip>
-              <LanguageSelector />
-              <ThemeToggle isDark={isDark} onToggle={onToggleTheme} />
             </div>
           </div>
         </div>
@@ -91,6 +101,11 @@ const Header: React.FC<HeaderProps> = ({ isDark, onToggleTheme, stats, setStats,
       <InstructionsDrawer
         isOpen={isInstructionsOpen}
         onClose={() => setIsInstructionsOpen(false)}
+      />
+      <ConfirmDialog
+        isOpen={isConfirmDialogOpen}
+        onClose={() => setIsConfirmDialogOpen(false)}
+        onConfirm={handleConfirmRestart}
       />
     </>
   );

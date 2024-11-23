@@ -49,5 +49,10 @@ export const es = {
   scoringHard: "Difícil: +20 puntos por ganar, -15 puntos por perder",
   cancel: "Cancelar",
   returnHome: "Volver al Inicio",
-  viewOnGitHub: "Ver en GitHub"
+  viewOnGitHub: "Ver en GitHub",
+  successRestartStatsMessage: "Estadísticas reiniciadas con éxito",
+  confirmRestartStatsTitle: "Confirmar Reinicio",
+  confirmRestartStatsMessage: "¿Estás seguro de que deseas reiniciar las estadísticas?",
+  confirmRestartStats: "Confirmar",
+  cancelRestartStats: "Cancelar",
 };
