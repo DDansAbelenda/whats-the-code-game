@@ -12,11 +12,12 @@ interface HeaderProps {
   isDark: boolean;
   onToggleTheme: () => void;
   stats: GameStats;
+  setStats: (stats: GameStats) => void;
   onHomeClick: () => void;
   onRestart: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ isDark, onToggleTheme, stats, onHomeClick, onRestart }) => {
+const Header: React.FC<HeaderProps> = ({ isDark, onToggleTheme, stats, setStats, onHomeClick, onRestart }) => {
   const { t } = useTranslation();
   const [isStatsOpen, setIsStatsOpen] = useState(false);
   const [isInstructionsOpen, setIsInstructionsOpen] = useState(false);
@@ -85,6 +86,7 @@ const Header: React.FC<HeaderProps> = ({ isDark, onToggleTheme, stats, onHomeCli
         isOpen={isStatsOpen}
         onClose={() => setIsStatsOpen(false)}
         stats={stats}
+        setStats={setStats}
       />
       <InstructionsDrawer
         isOpen={isInstructionsOpen}

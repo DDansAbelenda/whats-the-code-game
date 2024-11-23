@@ -1,4 +1,5 @@
 import { GameStats, GameHistory, Difficulty } from '../types/game';
+import { v4 as uuidv4 } from 'uuid';
 
 const STORAGE_KEY = 'whatsTheCode_gameStats';
 
@@ -20,15 +21,18 @@ export const saveGameResult = (
   difficulty: Difficulty,
   attempts: number,
   won: boolean,
-  points: number
+  points: number,
+  targetNumber: string
 ) => {
   const stats = getGameStats();
   const gameResult: GameHistory = {
+    id: uuidv4(),
     difficulty,
     attempts,
     won,
     points,
-    date: new Date().toISOString()
+    targetNumber,
+    date: `${new Date().toLocaleDateString()} - ${new Date().toLocaleTimeString()}`
   };
 
   stats.gamesPlayed++;
@@ -55,4 +59,16 @@ export const resetGameStats = (): GameStats => {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(initialStats));
   return initialStats;
 };
+
+export const deleteGameResult = (index: string) => {
+  const stats = getGameStats();
+  const newHistory = stats.history.filter(game => game.id !== index);
+  const newStats: GameStats = {
+    ...stats,
+    history: newHistory
+  }
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(newStats));
+  return newStats
+}
+
 

@@ -85,21 +85,21 @@ function App() {
     if (currentGuess === targetNumber) {
       setWon(true);
       setGameOver(true);
-      const newStats = saveGameResult(difficulty, newGuesses.length, true, config.winPoints);
+      const newStats = saveGameResult(difficulty, newGuesses.length, true, config.winPoints, targetNumber)
       setStats(newStats);
-      /*confetti({
+      confetti({
         particleCount: 100,
         spread: 70,
         origin: { y: 0.6 }
-      });*/
+      });
     } else if (newGuesses.length >= config.attempts) {
       setGameOver(true);
-      const newStats = saveGameResult(difficulty, newGuesses.length, false, config.losePoints);
+      const newStats = saveGameResult(difficulty, newGuesses.length, false, config.losePoints, targetNumber);
       setStats(newStats);
     }
   };
 
-  
+
   const handleRestart = () => {
     const newStats = resetGameStats();
     setStats(newStats);
@@ -111,6 +111,7 @@ function App() {
         isDark={isDark}
         onToggleTheme={() => setIsDark(!isDark)}
         stats={stats}
+        setStats={setStats}
         onHomeClick={returnToHome}
         onRestart={handleRestart}
       />

@@ -1,17 +1,21 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Trophy, Target, XCircle, Coins, Clock } from 'lucide-react';
+import { Trophy, Target, XCircle, Coins, Clock, Lock, Unlock, Trash } from 'lucide-react';
 import { GameStats } from '../../types/game';
+import { deleteGameResult, getGameStats } from '../../utils/storage';
 
 interface GameStatsDetailProps {
   stats: GameStats;
+  setStats: (stats: GameStats) => void;
 }
 
-const GameStatsDetail: React.FC<GameStatsDetailProps> = ({ stats }) => {
+const GameStatsDetail: React.FC<GameStatsDetailProps> = ({ stats, setStats }) => {
   const { t } = useTranslation();
 
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString();
+  const handleDelete = (index: string) => {
+    // Actualiza el estado y el almacenamiento
+    const newStats = deleteGameResult(index);
+    setStats(newStats)
   };
 
   return (
@@ -48,9 +52,9 @@ const GameStatsDetail: React.FC<GameStatsDetailProps> = ({ stats }) => {
           {t('recentGames')}
         </h3>
         <div className="space-y-3">
-          {stats.history.slice(-5).reverse().map((game, index) => (
+          {stats.history.reverse().map((game, index) => (
             <div
-              key={index}
+              key={stats.history[index].id}
               className="bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg flex items-center justify-between"
             >
               <div className="space-y-1">
@@ -64,15 +68,29 @@ const GameStatsDetail: React.FC<GameStatsDetailProps> = ({ stats }) => {
                     {t(game.difficulty)}
                   </span>
                 </div>
+                <div className="flex items-center space-x-2">
+                  {game.won ? (
+                    <Unlock className="w-4 h-4 text-green-500" />
+                  ) : (
+                    <Lock className="w-4 h-4 text-red-500" />
+                  )}
+                  <span className="capitalize text-gray-700 dark:text-gray-300">
+                    {t(game.targetNumber)}
+                  </span>
+                </div>
                 <div className="text-sm text-gray-500 dark:text-gray-400 flex items-center space-x-2">
                   <Clock className="w-4 h-4" />
-                  <span>{formatDate(game.date)}</span>
+                  <span>{game.date}</span>
                 </div>
               </div>
-              <div className={`font-semibold ${
-                game.points > 0 ? 'text-green-500' : 'text-red-500'
-              }`}>
-                {game.points > 0 ? '+' : ''}{game.points}
+              <div className='flex flex-col items-center gap-9'>
+                <button onClick={() => handleDelete(stats.history[index].id)}>
+                  <Trash className="w-4 h-4 text-gray-500 hover:text-red-500" />
+                </button>
+                <div className={`font-semibold ${game.points > 0 ? 'text-green-500' : 'text-red-500'
+                  }`}>
+                  {game.points > 0 ? '+' : ''}{game.points}
+                </div>
               </div>
             </div>
           ))}

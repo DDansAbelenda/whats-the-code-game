@@ -7,10 +7,12 @@ export interface GameConfig {
 }
 
 export interface GameHistory {
+  id: string,
   difficulty: Difficulty;
   attempts: number;
   won: boolean;
   points: number;
+  targetNumber: string;
   date: string;
 }
 

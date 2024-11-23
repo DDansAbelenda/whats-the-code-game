@@ -24,7 +24,7 @@ export const en = {
   restartGame:"Restart Stats",
   returnToHome: 'Return to Home',
   viewInstructions: "View Instructions",
-  recentGames: "Recent Games",
+  recentGames: "Game History",
   selectDifficulty: "Select Difficulty",
   easy: "Easy",
   medium: "Medium",
